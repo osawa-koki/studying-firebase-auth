@@ -10,7 +10,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 import firebaseConfig from '../firebaseConfig';
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const auth = firebaseApp.auth();
-onAuthStateChanged(auth, user => { console.log(user); });
+onAuthStateChanged(auth, user => { console.log(auth, user); });
 
 const provider = new firebase.auth.GoogleAuthProvider();
 
