@@ -23,7 +23,7 @@ app.use((req, res, next) => {
   }
 
   // Verify the ID token passed by the client.
-  admin.auth().verifyIdToken(idToken)
+  admin.auth().verifyIdToken(idToken, true)
     .then((decodedIdToken) => {
       // The ID token is valid and the claims can be read.
       // req.user = decodedIdToken;
