@@ -49,7 +49,7 @@ yarn build
 
 同時に使用する認証方法を有効化します。  
 
-![Authenticationの有効化](./.development/img/auth-method.png)  
+![Authenticationプロバイダの設定](./.development/img/auth-method.gif)  
 
 ### 4. 初期化
 
