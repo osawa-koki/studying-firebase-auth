@@ -25,6 +25,7 @@ yarn build
 3. Authenticationの有効化
 4. 初期化
 5. 認証処理の登録
+6. サーバサイドでの認証処理
 
 ### 1. Firebaseプロジェクトの作成
 
@@ -92,6 +93,42 @@ const Auth = () => {
     console.error(err);
   });
 };
+```
+
+## 6. サーバサイドでの認証処理
+
+認証処理はクライアントサイドで行いますが、サーバサイドでその認証情報を使用する際には、そのトークンの正当性を検証する必要があります。  
+そのためには、Firebaseの管理画面からサービスアカウントキーを取得します。  
+
+![サービスアカウントキー](./.development/img/service-account-key.png)  
+
+取得したファイルを保存し、サーバサイドスクリプトで読み込みます。  
+
+```ts
+import admin from 'firebase-admin';
+import serviceAccount from 'path/to/serviceAccountKey.json';
+
+// Initialize the Firebase Admin SDK with the service account credentials.
+admin.initializeApp(serviceAccount as admin.ServiceAccount);
+```
+
+この設定を行うことで、サーバサイドでFirebaseの認証情報を使用することができます。  
+
+```ts
+// Verify the ID token passed by the client.
+const idToken = req.headers.authorization;
+
+// Verify the ID token passed by the client.
+admin.auth().verifyIdToken(idToken)
+  .then((decodedIdToken) => {
+    // The ID token is valid and the claims can be read.
+    req.user = decodedIdToken;
+    next();
+  })
+  .catch((error) => {
+    // The ID token is invalid or the claims can't be read.
+    res.status(401).send({error: 'Unauthorized'});
+  });
 ```
 
 ## 参考文献

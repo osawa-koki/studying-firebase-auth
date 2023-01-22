@@ -1,16 +1,11 @@
 import express from 'express';
 import admin from 'firebase-admin';
 
+var serviceAccount = require("./secrets/serviceAccountKey.json");
 const app = express();
 
 // Initialize the Firebase Admin SDK with the service account credentials.
-admin.initializeApp({
-  credential: admin.credential.cert({
-    projectId: 'your-project-id',
-    clientEmail: 'your-client-email',
-    privateKey: 'your-private-key'
-  }),
-});
+admin.initializeApp(serviceAccount);
 
 app.use((req, res, next) => {
   // Get the ID token passed in the Authorization header.
