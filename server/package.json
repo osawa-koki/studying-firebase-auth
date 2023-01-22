@@ -6,6 +6,9 @@
   "author": "osawa-koki",
   "license": "Apache-2.0",
   "private": false,
+  "scripts": {
+    "start": "ts-node index.ts"
+  },
   "dependencies": {
     "express": "^4.18.2",
     "firebase-admin": "^11.5.0",
