@@ -27,6 +27,7 @@ app.use((req, res, next) => {
     .then((decodedIdToken) => {
       // The ID token is valid and the claims can be read.
       // req.user = decodedIdToken;
+      console.log(decodedIdToken);
       next();
     })
     .catch((error) => {
