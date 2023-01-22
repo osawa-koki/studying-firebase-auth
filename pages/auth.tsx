@@ -26,9 +26,9 @@ export default function HelloWorld() {
   const Auth = () => {
     // signInWithPopup or signInWithRedirect
     firebase.auth().signInWithPopup(provider).then(result => {
-      console.log(result)
+      console.log(result);
     }).catch(function(err) {
-      console.error(err)
+      console.error(err);
     });
   };
 
