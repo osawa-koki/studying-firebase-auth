@@ -4,7 +4,7 @@ const SUB_DIRECTORY = "";
 /* 本番環境と開発環境の分岐用のフラグ */
 const isProd = process.env.NODE_ENV === "production";
 
-module.exports = {
+const config = {
   basePath: isProd ? SUB_DIRECTORY : "",
   assetPrefix: isProd ? SUB_DIRECTORY : "",
   publicRuntimeConfig: {
@@ -12,3 +12,5 @@ module.exports = {
   },
   trailingSlash: true,
 };
+
+module.exports = config;
