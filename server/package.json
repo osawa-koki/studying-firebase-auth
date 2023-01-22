@@ -1,0 +1,9 @@
+{
+  "name": "studying-firebase-auth",
+  "version": "1.0.0",
+  "description": "🔐️🔐️🔐️ Firebase Authenticationを使った認証処理のサンプルです。",
+  "main": "index.ts",
+  "author": "osawa-koki",
+  "license": "Apache-2.0",
+  "private": false
+}
