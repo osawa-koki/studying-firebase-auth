@@ -9,8 +9,8 @@ const pages = [
     name: "About",
   },
   {
-    path: "/contact",
-    name: "Contact",
+    path: "/auth",
+    name: "Auth",
   },
 ];
 
