@@ -3,6 +3,8 @@
 🔐️🔐️🔐️ Firebase Authenticationを使った認証処理のサンプルです。  
 簡単に認証処理を実装できます。  
 
+![成果物](./.development/img/fruit.gif)  
+
 ## 実行方法
 
 ```shell
