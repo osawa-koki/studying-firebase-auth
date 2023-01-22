@@ -142,6 +142,33 @@ Firebaseの管理画面からドメインを追加します。
 
 ![ドメインの追加](./.development/img/add-domain.png)  
 
+### 認証後のトークンの内容
+
+認証後のトークンからは以下のプロパティにアクセスできます。  
+各プロバイダによって若干異なります。  
+これは、Google認証を使用した場合の情報です。  
+
+```json
+{
+  name: 'ユーザ名(表示名)',
+  picture: '画像パス',
+  iss: 'トークンの発行者のURI',
+  aud: 'トークンが有効であることが期待されるクライアントの識別子',
+  auth_time: 'ユーザが最後にログインした時間',
+  user_id: 'ユーザID',
+  sub: 'ユーザID(トークンの主題として)',
+  iat: トークンが発行された時間,
+  exp: トークンの有効期限,
+  email: 'メールアドレス',
+  email_verified: 'メールアドレスの検証状態',
+  firebase: {
+    identities: { 'google.com': [Array], email: [Array] },
+    sign_in_provider: 'google.com'
+  },
+  uid: 'UID'
+}
+```
+
 ## 参考文献
 
 - [Firebase Authentication](https://firebase.google.com/docs/auth/web/start?hl=ja)
