@@ -13,25 +13,6 @@ const auth = firebaseApp.auth();
 
 const provider = new firebase.auth.GoogleAuthProvider();
 
-// Client-side
-firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    // User is signed in.
-    user.getIdToken().then(function(idToken) {
-      // Send token to your server
-      console.log(`idToken: ${idToken}`);
-      // fetch('/auth', {
-      //   method: 'GET',
-      //   headers: {
-      //     'Authorization': `Bearer ${idToken}`
-      //   }
-      // });
-    });
-  } else {
-    // User is signed out.
-  }
-});
-
 export default function HelloWorld() {
 
   const Auth = () => {
@@ -42,6 +23,25 @@ export default function HelloWorld() {
       console.error(err);
     });
   };
+
+  // Client-side
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      // User is signed in.
+      user.getIdToken().then(function(idToken) {
+        // Send token to your server
+        console.log(`idToken: ${idToken}`);
+        // fetch('/auth', {
+        //   method: 'GET',
+        //   headers: {
+        //     'Authorization': `Bearer ${idToken}`
+        //   }
+        // });
+      });
+    } else {
+      // User is signed out.
+    }
+  });
 
   return (
     <Layout>
