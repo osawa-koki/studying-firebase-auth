@@ -194,7 +194,7 @@ yarn && yarn dev
 
 ```shell
 cd server
-yarn && yarn dev
+yarn && yarn start
 ```
 
 ## 参考文献
