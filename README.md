@@ -93,3 +93,8 @@ const Auth = () => {
   });
 };
 ```
+
+## 参考文献
+
+- [Firebase Authentication](https://firebase.google.com/docs/auth/web/start?hl=ja)
+- [Firebase Token](https://firebase.google.com/docs/auth/admin/verify-id-tokens)
