@@ -6,7 +6,7 @@ export default function HelloWorld() {
       <main>
         <div id="About">
           <h1>Here, About page.</h1>
-          <p>Next.js大好きです。<br />本当に使いやすいです。<br />僕はTypeScript × Next.jsを強くオススメします。<br /><br />静的型付け言語って難しいと思われがちですが、エディタの機能が豊富な現在は型付け言語の方が簡単に書くことができます。<br />さらには字句解析と構文解析に加えて、コンパイル時に、コンパイラによる意味解析を行ってくれるため、動的型付け言語と比較して動作に信頼性があります。<br /><br />また、Reactと比べてNext.jsはSSGによってビルド時にHTMLが生成されるため、SPA(SSR)と比べて高速に動作し、ユーザビリティが高いです。</p>
+          <p>認証を簡単に実現するサービス"Firebase Authentication"を試してみます。<br />比較的簡単に導入可能で、運用もしやすいのですが、公式ドキュメントが詳しくありません、、、泣</p>
         </div>
       </main>
     </Layout>
