@@ -169,6 +169,34 @@ Firebaseの管理画面からドメインを追加します。
 }
 ```
 
+## あなたがこのプロジェクトをクローンしたらするべきこと
+
+もし、あなたがこのプロジェクトをクローンして使用する場合は、以下の手順を実行してください。  
+
+[イロイロ説明](#イロイロ説明)にしたがって、Firebaseのアプリを作成します。  
+
+このプロジェクトに関して行うべきことは以下の通りです。  
+
+1. Firebaseの管理画面からサービスアカウントキーを取得します。
+2. 取得したサービスアカウントキーを`./server/secrets/serviceAccountKey.json`に保存します。
+3. Firebaseアプリの設定情報を`./client/firebaseConfig.json`に保存します。
+
+以上です。  
+
+クライアントを実行するには、以下のコマンドを実行します。  
+
+```shell
+cd client
+yarn && yarn dev
+```
+
+サーバを実行するには、以下のコマンドを実行します。  
+
+```shell
+cd server
+yarn && yarn dev
+```
+
 ## 参考文献
 
 - [Firebase Authentication](https://firebase.google.com/docs/auth/web/start?hl=ja)
