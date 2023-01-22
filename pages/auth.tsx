@@ -1,15 +1,11 @@
 import React, { useState } from "react";
 
-import { Button, Alert, Form } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import Layout from "../components/Layout";
 
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import { onAuthStateChanged } from 'firebase/auth';
-
-import PageBlock from "../components/pages";
-
-const mail_regex = new RegExp(/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/);
 
 const firebaseApp = firebase.initializeApp({
   apiKey: "AIzaSyDp0_U8B9ZM4mRequ0v5IjPpaLQHdNc8_8",
