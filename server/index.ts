@@ -42,4 +42,4 @@ app.get('/auth', (req, res) => {
   res.send({ verified: true });
 });
 
-app.listen(3000);
+app.listen(8080);
