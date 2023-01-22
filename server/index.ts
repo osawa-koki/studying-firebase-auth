@@ -5,14 +5,20 @@ var serviceAccount = require("./secrets/serviceAccountKey.json");
 const app = express();
 
 // Initialize the Firebase Admin SDK with the service account credentials.
-admin.initializeApp(serviceAccount);
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+});
 
 app.use((req, res, next) => {
   // Get the ID token passed in the Authorization header.
-  const idToken = req.headers.authorization;
+  // サブマッチパターンを使って、AuthorizationヘッダーからIDトークンを取得する
+  const idToken = req.headers.authorization?.toString().match(/Bearer (?<TOKEN>.*)/)?.groups?.TOKEN;
 
   if (!idToken) {
-    res.status(401).send({error: 'Unauthorized'});
+    res.status(401).send({
+      error: 'Unauthorized',
+      message: 'No ID token was passed as a Bearer token in the Authorization header.',
+    });
     return;
   }
 
