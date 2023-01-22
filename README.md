@@ -133,6 +133,15 @@ admin.auth().verifyIdToken(idToken)
   });
 ```
 
+## その他情報共有
+
+### ドメインを追加する
+
+Firebaseの認証画面を表示する際に、ドメインを追加する必要があります。  
+Firebaseの管理画面からドメインを追加します。  
+
+![ドメインの追加](./.development/img/add-domain.png)  
+
 ## 参考文献
 
 - [Firebase Authentication](https://firebase.google.com/docs/auth/web/start?hl=ja)
