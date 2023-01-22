@@ -19,7 +19,7 @@ const firebaseApp = firebase.initializeApp({
 const auth = firebaseApp.auth();
 onAuthStateChanged(auth, user => { console.log(user); });
 
-const provider = new firebase.auth.GoogleAuthProvider()
+const provider = new firebase.auth.GoogleAuthProvider();
 
 export default function HelloWorld() {
 
@@ -29,8 +29,8 @@ export default function HelloWorld() {
       console.log(result)
     }).catch(function(err) {
       console.error(err)
-    })
-  }
+    });
+  };
 
   return (
     <Layout>
