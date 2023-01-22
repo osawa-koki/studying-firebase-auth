@@ -25,7 +25,10 @@ app.use((req, res, next) => {
     })
     .catch((error) => {
       // The ID token is invalid or the claims can't be read.
-      res.status(401).send({error: 'Unauthorized'});
+      res.status(401).send({
+        error: 'Unauthorized',
+        message: error.message,
+      });
     });
 });
 

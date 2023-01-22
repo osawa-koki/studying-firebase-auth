@@ -10,9 +10,27 @@ import { onAuthStateChanged } from 'firebase/auth';
 import firebaseConfig from '../firebaseConfig';
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const auth = firebaseApp.auth();
-onAuthStateChanged(auth, user => { console.log(auth, user); });
 
 const provider = new firebase.auth.GoogleAuthProvider();
+
+// Client-side
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+    user.getIdToken().then(function(idToken) {
+      // Send token to your server
+      console.log(`idToken: ${idToken}`);
+      // fetch('/auth', {
+      //   method: 'GET',
+      //   headers: {
+      //     'Authorization': `Bearer ${idToken}`
+      //   }
+      // });
+    });
+  } else {
+    // User is signed out.
+  }
+});
 
 export default function HelloWorld() {
 
